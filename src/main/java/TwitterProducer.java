@@ -85,10 +85,10 @@ public class TwitterProducer {
         return kp;
     }
 
-    String consumerKey = "dOHiV1vYFQjA4Zixo4SHP4ZxU";
-    String consumerSecret = "nQe5eibr4JGRVYgyeguMz1ZEqX40cThW7C8UmIkG9XalvjhLOR";
-    String token = "707230359-2tGBjJhM6tfJyEPmA7412ZukEXKaV7IVRD8BKyxo";
-    String secret = "UzgEILCXsnj1EPahuBOMwec3p9Yx9YHdoj4zKI6b6wGgN";
+    String consumerKey = "[insert your consumer key]";
+    String consumerSecret = "[insert your consumer secret]";
+    String token = "[insert your access key]";
+    String secret = "[insert your access secret]";
 
     public Client createTwitterClient(BlockingQueue<String> msgQueue) {
 
