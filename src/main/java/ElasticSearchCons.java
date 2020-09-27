@@ -34,6 +34,7 @@ public class ElasticSearchCons {
 
         // replace with your own credentials
         String hostname = ""; // localhost or bonsai url
+
         // needed only for bonsai
         String username = "";
         String password = ""; // needed only for bonsai
@@ -59,8 +60,9 @@ public class ElasticSearchCons {
 
     public static void main(String[] args) throws IOException {
         Logger log = LoggerFactory.getLogger(ElasticSearchCons.class);
-        RestHighLevelClient rc = createClient();
 
+        // To connect to ElasticSearch and perform Search operations
+        RestHighLevelClient rc = createClient();
         String jsonString = "{ \"foo\": \"bar\"}";
         IndexRequest indexRequest = new IndexRequest(
                 "twitter",

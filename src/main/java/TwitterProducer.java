@@ -42,7 +42,7 @@ public class TwitterProducer {
         // create kafka producer
         KafkaProducer<String, String> kp = createKafkaProducer();
 
-        //add showdonw hook
+        //add showdown hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             client.stop();
             kp.close();
@@ -92,15 +92,14 @@ public class TwitterProducer {
 
     public Client createTwitterClient(BlockingQueue<String> msgQueue) {
 
-
         /** Declare the host you want to connect to, the endpoint, and authentication (basic auth or oauth) */
         Hosts hosebirdHosts = new HttpHosts(Constants.STREAM_HOST);
         StatusesFilterEndpoint hosebirdEndpoint = new StatusesFilterEndpoint();
-// Optional: set up some followings and track terms
+        // Optional: set up some followings and track terms
         List<String> terms = Lists.newArrayList("modi");
         hosebirdEndpoint.trackTerms(terms);
 
-// These secrets should be read from a config file
+        // These secrets should be read from a config file
         Authentication hosebirdAuth = new OAuth1(consumerKey, consumerSecret, token, secret);
 
         ClientBuilder builder = new ClientBuilder()
